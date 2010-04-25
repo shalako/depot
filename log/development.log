@@ -1,0 +1,2506 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (77.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (141.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20100331001608)
+  [4;36;1mSQL (53.3ms)[0m   [0;1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `image_url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100331001608')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 17:33:39) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 30ms (View: 25, DB: 1) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 17:33:46) [GET]
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 20:24:25) [GET]
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/products/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 20:24:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"This a really great widget."}}
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (0.3ms)[0m   [0mINSERT INTO `products` (`created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES('2010-03-31 03:24:54', 'Widget 1', '/images/ey.png', '2010-03-31 03:24:54', 'This a really great widget.')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 9ms (DB: 2) | 302 Found [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 20:24:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 20:25:27) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 20:25:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 58ms (View: 3, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 20:25:35) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20100331001608)
+Migrating to AddPriceToProduct (20100331033407)
+  [4;36;1mSQL (442.7ms)[0m   [0;1mALTER TABLE `products` ADD `price` decimal(8,2) DEFAULT 0[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100331033407')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:02:11) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:02:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 17ms (View: 11, DB: 2) | 200 OK [http://localhost/products/1/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:02:26) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"1", "product"=>{"price"=>"69.50", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"This a really great widget."}}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Update (0.3ms)[0m   [0;1mUPDATE `products` SET `updated_at` = '2010-03-31 04:02:26', `price` = 69.5 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:02:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 14ms (View: 6, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:02:29) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:02:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/products/1/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:02:45) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"1", "product"=>{"price"=>"69.54", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"This a really great widget."}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Update (0.3ms)[0m   [0mUPDATE `products` SET `updated_at` = '2010-03-31 04:02:45', `price` = 69.54 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:02:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/products/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:02:52) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"1", "product"=>{"price"=>"69.50", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"This a really great widget."}}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Update (0.2ms)[0m   [0;1mUPDATE `products` SET `updated_at` = '2010-03-31 04:02:52', `price` = 69.5 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 10ms (DB: 3) | 302 Found [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:02:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:02:54) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 21:02:58) [GET]
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/products/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 21:03:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"2342.32342", "image_url"=>"/images/ey.png", "title"=>"Widget 2", "description"=>"Also a nice widget."}}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (0.2ms)[0m   [0mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(2342.32342, '2010-03-31 04:03:26', 'Widget 2', '/images/ey.png', '2010-03-31 04:03:26', 'Also a nice widget.')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/2
+Completed in 12ms (DB: 2) | 302 Found [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:03:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 3, DB: 2) | 200 OK [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:03:30) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:20:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (75.1ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 89ms (View: 8, DB: 77) | 200 OK [http://localhost/products/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:20:25) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"1", "product"=>{"price"=>"69.50", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"<p>This a really great widget.\r\n</p>"}}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Update (0.3ms)[0m   [0;1mUPDATE `products` SET `updated_at` = '2010-03-31 04:20:25', `description` = '<p>This a really great widget.\r\n</p>' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 12ms (DB: 3) | 302 Found [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:20:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:20:27) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:20:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/products/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:21:23) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"2", "product"=>{"price"=>"2342.32", "image_url"=>"/images/ey.png", "title"=>"Widget 2", "description"=>"<p>Also a nice widget with the following features:\r\n<ul>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ul>\r\n</p>"}}
+  [4;36;1mProduct Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Update (0.3ms)[0m   [0mUPDATE `products` SET `updated_at` = '2010-03-31 04:21:23', `description` = '<p>Also a nice widget with the following features:\r\n<ul>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ul>\r\n</p>' WHERE `id` = 2[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/2
+Completed in 12ms (DB: 4) | 302 Found [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:21:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:21:25) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (66.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 79ms (View: 8, DB: 67) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:21:52) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:21:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Columns (27.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 38ms (View: 6, DB: 28) | 200 OK [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:22:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 13ms (View: 7, DB: 2) | 200 OK [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:22:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:22:30) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 21:40:28) [GET]
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 21:40:30) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"", "description"=>""}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY '') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 21:41:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"0.0", "image_url"=>"/imag", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 18ms (View: 8, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 21:41:36) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"0.0", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3') LIMIT 1[0m
+  [4;35;1mProduct Create (0.2ms)[0m   [0mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(0.0, '2010-03-31 04:41:36', 'Widget 3', '/images/ey.png', '2010-03-31 04:41:36', '<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed in 11ms (DB: 2) | 302 Found [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:41:36) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:41:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/products/3/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:41:54) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"3", "product"=>{"price"=>"", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3' AND `products`.id <> 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 18ms (View: 9, DB: 2) | 200 OK [http://localhost/products/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:41:58) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"3", "product"=>{"price"=>"0", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3' AND `products`.id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed in 62ms (DB: 2) | 302 Found [http://localhost/products/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:41:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:44:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/products/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:44:26) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"3", "product"=>{"price"=>"0.00", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3' AND `products`.id <> 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed in 10ms (DB: 2) | 302 Found [http://localhost/products/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:44:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/3]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:46:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/products/3/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:46:09) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"3", "product"=>{"price"=>"0.00", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3' AND `products`.id <> 3) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (undefined method `<' for :price:Symbol):
+  app/models/product.rb:12:in `price_must_be_at_least_a_cent'
+  app/controllers/products_controller.rb:63:in `update'
+  app/controllers/products_controller.rb:62:in `update'
+
+Rendered rescues/_trace (95.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:46:34) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"3", "product"=>{"price"=>"0.00", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.8ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3' AND `products`.id <> 3) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 22ms (View: 8, DB: 3) | 200 OK [http://localhost/products/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:46:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"3", "product"=>{"price"=>"54.9834", "image_url"=>"/images/ey.png", "title"=>"Widget 3", "description"=>"<p>Best widget ever?\r\n<ol>\r\n<li>feature</li>\r\n<li>feature</li>\r\n<li>feature</li>\r\n</ol>\r\n</p>"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 3' AND `products`.id <> 3) LIMIT 1[0m
+  [4;36;1mProduct Update (0.2ms)[0m   [0;1mUPDATE `products` SET `updated_at` = '2010-03-31 04:46:48', `price` = 54.9834 WHERE `id` = 3[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/products/3
+Completed in 11ms (DB: 3) | 302 Found [http://localhost/products/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:46:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 3) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:46:51) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:48:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:48:31) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 70ms (View: 12, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2010-03-30 21:48:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/products/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:48:39) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"1", "product"=>{"price"=>"", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"<p>This a really great widget.\r\n</p>"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 1' AND `products`.id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 19ms (View: 10, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2010-03-30 21:48:52) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "id"=>"1", "product"=>{"price"=>"2343.24324", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"<p>This a really great widget.\r\n</p>"}}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 1' AND `products`.id <> 1) LIMIT 1[0m
+  [4;35;1mProduct Update (0.2ms)[0m   [0mUPDATE `products` SET `updated_at` = '2010-03-31 04:48:52', `price` = 2343.24324 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 11ms (DB: 3) | 302 Found [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:48:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 2, DB: 2) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:48:54) [GET]
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:48:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:49:00) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 17ms (View: 11, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 21:49:02) [GET]
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/products/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 21:49:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"234.2342", "image_url"=>"/images/ey.png", "title"=>"bladfadf", "description"=>"alkjdf;akldf;a"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'bladfadf') LIMIT 1[0m
+  [4;35;1mProduct Create (0.2ms)[0m   [0mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(234.2342, '2010-03-31 04:49:16', 'bladfadf', '/images/ey.png', '2010-03-31 04:49:16', 'alkjdf;akldf;a')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/4
+Completed in 11ms (DB: 3) | 302 Found [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 21:49:16) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 4) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:49:19) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 13, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 21:59:07) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (90.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 111ms (View: 16, DB: 91) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddTestData (20080601000003)
+  [4;36;1mProduct Delete all (0.7ms)[0m   [0;1mDELETE FROM `products` [0m
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pragmatic Project Automation') LIMIT 1[0m
+  [4;36;1mProduct Create (0.2ms)[0m   [0;1mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(29.95, '2010-03-31 05:07:41', 'Pragmatic Project Automation', '/images/auto.jpg', '2010-03-31 05:07:41', '<p>\n <em>Pragmatic Project Automation</em> shows you how to improve the \n consistency and repeatability of your project\'s procedures using \n automation to reduce risk and errors.\n </p>\n <p>\n Simply put, we\'re going to put this thing called a computer to work \n for you doing the mundane (but important) project stuff. That means \n you\'ll have more time and energy to do the really \n exciting---and difficult---stuff, like writing quality code.\n </p>')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pragmatic Version Control') LIMIT 1[0m
+  [4;36;1mProduct Create (0.2ms)[0m   [0;1mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(28.5, '2010-03-31 05:07:41', 'Pragmatic Version Control', '/images/svn.jpg', '2010-03-31 05:07:41', '<p>\n This book is a recipe-based approach to using Subversion that will \n get you up and running quickly---and correctly. All projects need\n version control: it\'s a foundational piece of any project\'s \n infrastructure. Yet half of all project teams in the U.S. don\'t use\n any version control at all. Many others don\'t use it well, and end \n up experiencing time-consuming problems.\n </p>')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pragmatic Unit Testing (C#)') LIMIT 1[0m
+  [4;36;1mProduct Create (0.3ms)[0m   [0;1mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(27.75, '2010-03-31 05:07:41', 'Pragmatic Unit Testing (C#)', '/images/utc.jpg', '2010-03-31 05:07:41', '<p>\n Pragmatic programmers use feedback to drive their development and \n personal processes. The most valuable feedback you can get while \n coding comes from unit testing.\n </p>\n <p>\n Without good tests in place, coding can become a frustrating game of \n \"whack-a-mole.\" That\'s the carnival game where the player strikes at a \n mechanical mole; it retreats and another mole pops up on the opposite side \n of the field. The moles pop up and down so fast that you end up flailing \n your mallet helplessly as the moles continue to pop up where you least \n expect them.\n </p>')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080601000003')[0m
+Migrating to CreateProducts (20100331001608)
+Migrating to AddPriceToProduct (20100331033407)
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `products`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 22:22:01) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 75ms (View: 20, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-30 22:22:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/auto.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-30 22:22:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/svn.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-30 22:22:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/utc.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 22:27:38) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 21ms (View: 16, DB: 2) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 22:27:56) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 22:32:42) [GET]
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 22:32:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"0.0", "image_url"=>"", "title"=>"Widget 1", "description"=>""}}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 76ms (View: 67, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 22:33:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"23432", "image_url"=>"/images/ey.png", "title"=>"Widget 1", "description"=>"blah blah"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 20ms (View: 9, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 22:33:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"23432", "image_url"=>"/images/ey.png", "title"=>"Widget 123", "description"=>"blah blah"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 123') LIMIT 1[0m
+  [4;35;1mProduct Create (0.2ms)[0m   [0mINSERT INTO `products` (`price`, `created_at`, `title`, `image_url`, `updated_at`, `description`) VALUES(23432.0, '2010-03-31 05:33:24', 'Widget 123', '/images/ey.png', '2010-03-31 05:33:24', 'blah blah')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/products/8
+Completed in 11ms (DB: 3) | 302 Found [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-03-30 22:33:24) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 8) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/products/8]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 22:33:26) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 23ms (View: 15, DB: 4) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2010-03-30 22:33:53) [GET]
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 22:34:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"2", "image_url"=>"/images/ey.png", "title"=>"Widget 123", "description"=>"adfasdf"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 123') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 69ms (View: 9, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2010-03-30 22:34:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA=", "product"=>{"price"=>"2", "image_url"=>"/images/ey.png", "title"=>"Widget 123", "description"=>"adfasdf"}}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Widget 123') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 18ms (View: 9, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-03-30 22:34:51) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 22ms (View: 16, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-31 21:06:58) [GET]
+
+ActionController::RoutingError (No route matches "/store" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:08:13) [GET]
+Rendering store/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:14:51) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 23ms (View: 17, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:22:01) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 14, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:25:32) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:27:05) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 64ms (View: 59, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:31:08) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 14, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:31:14) [POST]
+  Parameters: {"authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA="}
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:31:15) [POST]
+  Parameters: {"authenticity_token"=>"fJIjEqo1d2ODqJ/gfTr8v3AobyP2ftiZSGm4qJp2lKA="}
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:34:42) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 12, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:38:33) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (91.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 111ms (View: 15, DB: 92) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:39:45) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 18ms (View: 13, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:40:30) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:41:16) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 18ms (View: 12, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:46:48) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (undefined local variable or method `add_to_cart' for #<ActionView::Base:0x101775d10>) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<a href="<%= link_to add_to_cart, method => post %>"><%= image_tag(product.image_url) %></a> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (91.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:49:57) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (undefined local variable or method `add_to_cart' for #<ActionView::Base:0x101f46c60>) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to product.image_url, add_to_cart, method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (97.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:50:38) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to product.image_url, "#", method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5:in `method'
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:50:52) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to product.image_url, method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5:in `method'
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:51:50) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to product.image_url, "/store", method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5:in `method'
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:57:36) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to image_tag(product.image_url), method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5:in `method'
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (39.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 21:59:28) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to "Picture", image_tag(product.image_url), method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5:in `method'
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:02:03) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (undefined local variable or method `add_to_cart' for #<ActionView::Base:0x1018333b0>) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to image_tag(product.image_url), :action => add_to_cart, :method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:02:49) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (undefined local variable or method `post' for #<ActionView::Base:0x10212b490>) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to image_tag(product.image_url), :method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddTestData (20080601000003)
+Migrating to CreateProducts (20100331001608)
+Migrating to AddPriceToProduct (20100331033407)
+Migrating to CreateSessions (20100401050907)
+  [4;36;1mSQL (59.6ms)[0m   [0;1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (113.8ms)[0m   [0mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;36;1mSQL (109.7ms)[0m   [0;1mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100401050907')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:36:10) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (undefined local variable or method `post' for #<ActionView::Base:0x10235d178>) on line #5 of app/views/store/index.html.erb:
+2: 
+3: <% for product in @products -%>
+4: 	<div class="entry">
+5: 		<%= link_to image_tag(product.image_url), :action => 'add_to_cart', :method => post %> 
+6: 		<h3><%=h product.title %></h3> 
+7: 		<%= product.description %> 
+8: 		<div class="price-line">
+
+    app/views/store/index.html.erb:5
+    app/views/store/index.html.erb:3:in `each'
+    app/views/store/index.html.erb:3
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:36:46) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 77ms (View: 20, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:36:51) [POST]
+  Parameters: {"authenticity_token"=>"A56asInw0WUko3X3LdttbYRmC/TMpFDROxERddd+FIg=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:37:06) [GET]
+  [4;36;1mProduct Load (1.1ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 49ms (View: 41, DB: 4) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:37:09) [POST]
+  Parameters: {"authenticity_token"=>"bNsuj8BNPNarJFN4nqvxb715+SyjhE+hpYOtG2XJh28=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:43:47) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 68ms (View: 61, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:44:04) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 15ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:44:06) [POST]
+  Parameters: {"authenticity_token"=>"B218NGwX3V7Rcop1U2Pox7Hpf3aPo7DV5mherGxCxPo=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+
+ActionView::MissingTemplate (Missing template store/add_to_cart.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:44:40) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 20ms (View: 12, DB: 2) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:47:01) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 13, DB: 2) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:47:03) [POST]
+  Parameters: {"authenticity_token"=>"B218NGwX3V7Rcop1U2Pox7Hpf3aPo7DV5mherGxCxPo=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 14ms (View: 5, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:47:42) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (67.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 85ms (View: 12, DB: 68) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:47:44) [POST]
+  Parameters: {"authenticity_token"=>"B218NGwX3V7Rcop1U2Pox7Hpf3aPo7DV5mherGxCxPo=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 16ms (View: 3, DB: 3) | 200 OK [http://localhost/store/add_to_cart/7]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:56:12) [POST]
+  Parameters: {"authenticity_token"=>"B218NGwX3V7Rcop1U2Pox7Hpf3aPo7DV5mherGxCxPo=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/models/cart.rb:9:in `add_product'
+  app/controllers/store_controller.rb:9:in `add_to_cart'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (359.0ms)[0m   [0;1mDELETE FROM sessions[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:57:55) [POST]
+  Parameters: {"authenticity_token"=>"B218NGwX3V7Rcop1U2Pox7Hpf3aPo7DV5mherGxCxPo=", "id"=>"7"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (92.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:58:14) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 17ms (View: 10, DB: 3) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:58:16) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:58:17) [POST]
+  Parameters: {"authenticity_token"=>"IkRVSWCFj/PPd8iZH0J0i+rxfCXDfvDXn4whlHdMbJc=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/models/cart.rb:9:in `add_product'
+  app/controllers/store_controller.rb:9:in `add_to_cart'
+
+Rendered rescues/_trace (87.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:58:31) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 12, DB: 2) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDELETE FROM sessions[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:58:38) [POST]
+  Parameters: {"authenticity_token"=>"IkRVSWCFj/PPd8iZH0J0i+rxfCXDfvDXn4whlHdMbJc=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:58:45) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 18ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mDELETE FROM sessions[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:58:52) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 17ms (View: 11, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:58:54) [POST]
+  Parameters: {"authenticity_token"=>"P77nI2AqmqZDjOhWRnn0+YcavNkkymvXw7ayxA67or0=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/models/cart.rb:9:in `add_product'
+  app/controllers/store_controller.rb:9:in `add_to_cart'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:59:35) [POST]
+  Parameters: {"authenticity_token"=>"P77nI2AqmqZDjOhWRnn0+YcavNkkymvXw7ayxA67or0=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/models/cart.rb:9:in `add_product'
+  app/controllers/store_controller.rb:9:in `add_to_cart'
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDELETE FROM sessions[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:59:44) [POST]
+  Parameters: {"authenticity_token"=>"P77nI2AqmqZDjOhWRnn0+YcavNkkymvXw7ayxA67or0=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 22:59:51) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 22:59:54) [POST]
+  Parameters: {"authenticity_token"=>"k2wIox4P6EimnvISF85hPYE9Vp9go/M324Yp5mHOBHo=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/models/cart.rb:9:in `add_product'
+  app/controllers/store_controller.rb:9:in `add_to_cart'
+
+Rendered rescues/_trace (84.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDELETE FROM sessions[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:05:09) [POST]
+  Parameters: {"authenticity_token"=>"k2wIox4P6EimnvISF85hPYE9Vp9go/M324Yp5mHOBHo=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 23:05:14) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:05:22) [POST]
+  Parameters: {"authenticity_token"=>"3VVFQogskmE6smE3uPALS3Or1DbN1OztwKGERGIAFQ8=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (87.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:05:47) [POST]
+  Parameters: {"authenticity_token"=>"3VVFQogskmE6smE3uPALS3Or1DbN1OztwKGERGIAFQ8=", "id"=>"5"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mDELETE FROM sessions[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 23:06:05) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 40ms (View: 33, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:06:08) [POST]
+  Parameters: {"authenticity_token"=>"INDinH5UNhpD7A5ysz3ITO4dLXkY0gJKL8rx7sdoar8=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/models/cart.rb:9:in `add_product'
+  app/controllers/store_controller.rb:9:in `add_to_cart'
+
+Rendered rescues/_trace (32.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-03-31 23:07:51) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:07:54) [POST]
+  Parameters: {"authenticity_token"=>"INDinH5UNhpD7A5ysz3ITO4dLXkY0gJKL8rx7sdoar8=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 18ms (View: 7, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:08:08) [POST]
+  Parameters: {"authenticity_token"=>"INDinH5UNhpD7A5ysz3ITO4dLXkY0gJKL8rx7sdoar8=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 13ms (View: 2, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-03-31 23:08:11) [POST]
+  Parameters: {"authenticity_token"=>"INDinH5UNhpD7A5ysz3ITO4dLXkY0gJKL8rx7sdoar8=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 67ms (View: 2, DB: 2) | 200 OK [http://localhost/store/add_to_cart/7]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:26:59) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (16.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 188ms (View: 153, DB: 18) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:27:49) [GET]
+  Parameters: {"id"=>"wibble"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Product with ID=wibble):
+  app/controllers/store_controller.rb:7:in `add_to_cart'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:37:39) [GET]
+  Parameters: {"id"=>"wibble"}
+
+SyntaxError (/Users/scoen/Documents/Ruby on Rails/agile/depot/app/controllers/store_controller.rb:10: syntax error, unexpected tSYMBEG, expecting kDO or '{' or '('
+	rescue ActiveRecord:RecordNotFound
+	                    ^):
+  
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:38:41) [GET]
+  Parameters: {"id"=>"wibble"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 0) [0m
+Attempt to access invalid product wibble
+Redirected to http://localhost:3000/store
+Completed in 7ms (DB: 2) | 302 Found [http://localhost/store/add_to_cart/wibble]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:38:41) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 15ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:38:59) [GET]
+  Parameters: {"id"=>"wibble"}
+  [4;36;1mProduct Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 0) [0m
+Attempt to access invalid product wibble
+Redirected to http://localhost:3000/store
+Completed in 9ms (DB: 3) | 302 Found [http://localhost/store/add_to_cart/wibble]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:39:00) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:44:21) [GET]
+  Parameters: {"id"=>"wibble"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 0) [0m
+Attempt to access invalid product wibble
+Redirected to http://localhost:3000/store
+Completed in 7ms (DB: 2) | 302 Found [http://localhost/store/add_to_cart/wibble]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:44:21) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+ERROR: compiling _run_erb_app47views47layouts47store46html46erb RAISED compile error
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:22: syntax error, unexpected '<'
+				<div id="notice"><%= flash[:not...
+				 ^
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:22: syntax error, unexpected '<'
+				<div id="notice"><%= flash[:notice] ; @output_bu...
+				                  ^
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:32: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47layouts47store46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\" >\n<html> \n<head>\n\t<title>Pragprog Books Online Store</title>\n\t"
+
+
+
+; @output_buffer.concat(( stylesheet_link_tag "depot", :media => "all" ).to_s); @output_buffer.concat "\n</head> \n<body id=\"store\">\n\t<div id=\"banner\">\n\t\t"
+
+
+
+; @output_buffer.concat(( image_tag("logo.png") ).to_s); @output_buffer.concat "\n\t\t"
+; @output_buffer.concat(( @page_title || "Pragmatic Bookshelf" ).to_s); @output_buffer.concat "\n\t</div> \n\t<div id=\"columns\">\n\t\t<div id=\"side\"> \n\t\t\t<a href=\"http://www....\">Home</a><br /> \n\t\t\t<a href=\"http://www..../faq\">Questions</a><br /> \n\t\t\t<a href=\"http://www..../news\">News</a><br /> \n\t\t\t<a href=\"http://www..../contact\">Contact</a><br />\n\t\t\t<p>"
+
+
+
+
+
+
+
+; @output_buffer.concat(( Time.now ).to_s); @output_buffer.concat "</p>\n\t\t</div> \n\t\t<div id=\"main\">\n\t\t\t"
+
+
+;  if flash[:notice]
+				<div id="notice"><%= flash[:notice] ; @output_buffer.concat "</div>\n\t\t\t"
+;  end ; @output_buffer.concat "\n\t\t\t"
+; @output_buffer.concat(( yield :layout ).to_s); @output_buffer.concat "\n\t\t</div> \n\t</div>\n</body> \n</html>\n"
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:32:in `compile!'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:352:in `_render_with_layout'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/scoen/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/scoen/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/scoen/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/scoen/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/scoen/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/scoen/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/scoen/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/scoen/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:22: syntax error, unexpected '<'
+				<div id="notice"><%= flash[:not...
+				 ^
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:22: syntax error, unexpected '<'
+				<div id="notice"><%= flash[:notice] ; @output_bu...
+				                  ^
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting kEND
+/Users/scoen/Documents/Ruby on Rails/agile/depot/app/views/layouts/store.html.erb:32: syntax error, unexpected $end, expecting kEND) on line #22 of app/views/layouts/store.html.erb:
+19: 		</div> 
+20: 		<div id="main">
+21: 			<% if flash[:notice]
+22: 				<div id="notice"><%= flash[:notice] %></div>
+23: 			<% end %>
+24: 			<%= yield :layout %>
+25: 		</div> 
+
+    app/views/layouts/store.html.erb:32:in `compile!'
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:45:05) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 19ms (View: 14, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:45:10) [GET]
+  Parameters: {"id"=>"wibble"}
+  [4;36;1mProduct Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 0) [0m
+Attempt to access invalid product wibble
+Redirected to http://localhost:3000/store
+Completed in 8ms (DB: 2) | 302 Found [http://localhost/store/add_to_cart/wibble]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:45:10) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:48:21) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 17ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:48:23) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 64ms (View: 7, DB: 3) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 17:48:25) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+Redirected to http://localhost:3000/store
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:48:26) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:48:30) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 64ms (View: 54, DB: 3) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:48:41) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:48:43) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 15ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/7]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:48:46) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:48:48) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 13ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 17:48:52) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+Redirected to http://localhost:3000/store
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:48:52) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 76ms (View: 69, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:51:44) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:51:46) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 14ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 17:51:47) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/store_controller.rb:17:in `redirect_to_index'
+  app/controllers/store_controller.rb:17:in `empty_cart'
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 17:52:41) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+Redirected to http://localhost:3000/store
+Completed in 4ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:52:41) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 15ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:52:43) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 13ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 17:52:44) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+Redirected to http://localhost:3000/store
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:52:44) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:52:46) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 13ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:52:49) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 71ms (View: 65, DB: 2) | 200 OK [http://localhost/store/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:52:51) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 14ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/7]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:52:59) [GET]
+  Parameters: {"id"=>"wibble"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 0) [0m
+Attempt to access invalid product wibble
+Redirected to http://localhost:3000/store
+Completed in 14ms (DB: 3) | 302 Found [http://localhost/store/add_to_cart/wibble]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:52:59) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 17:53:03) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 14ms (View: 3, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 17:53:04) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+Redirected to http://localhost:3000/store
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 17:53:04) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 70ms (View: 64, DB: 2) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 18:04:21) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"5"}
+  [4;36;1mProduct Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 19ms (View: 9, DB: 2) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 18:04:27) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 17ms (View: 5, DB: 2) | 200 OK [http://localhost/store/add_to_cart/7]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2010-04-06 18:04:32) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A=", "id"=>"7"}
+  [4;36;1mProduct Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 7) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 16ms (View: 5, DB: 2) | 200 OK [http://localhost/store/add_to_cart/7]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2010-04-06 18:04:35) [POST]
+  Parameters: {"authenticity_token"=>"kdMyjZMxMyR8Dd23D4gck35x0fUF/8orORMiVv5wu+A="}
+Redirected to http://localhost:3000/store
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2010-04-06 18:04:36) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+  [4;35;1mProduct Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/store]
